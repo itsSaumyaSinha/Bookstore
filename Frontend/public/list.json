@@ -1,0 +1,127 @@
+[
+        {
+            "id": 1,
+            "name": "1984",
+            "title": "George Orwell",
+            "price": 8.99,
+            "category": "Dystopian",
+            "image_url" : "1984 George Orwell.png"
+        },
+        {
+            "id": 2,
+            "name": "Pride and Prejudice",
+            "title": "Jane Austen",
+            "price": 12.99,
+            "category": "Romance",
+            "image_url": "Pride and prejudice.png"
+        },
+        {
+            "id": 3,
+            "name": "The Great Gatsby",
+            "title": "F. Scott Fitzgerald",
+            "price": 11.99,
+            "category": "Classic",
+            "image_url": "The Great Gatsby.png"
+        },
+        
+        {
+            "id":4,
+            "name": "War and Peace",
+            "title": "Leo Tolstoy",
+            "price": 18.99,
+            "category": "Historical Fiction",
+            "image_url": "War and peace.png"
+        },
+        {
+            "id": 5,
+            "name": "Where the Crawdads Sing",
+            "title": "Delia Owens",
+            "price": 14.99,
+            "category": "Fiction",
+            "image_url": "Where the crawdads sing.png"
+        },
+       
+        {
+            "id": 6,
+            "name": "The Hobbit",
+            "title": "J.R.R. Tolkien",
+            "price": 13.99,
+            "category": "Fantasy",
+            "image_url": "The hobbit.png"
+        },
+        {
+            "id": 7,
+            "name": "Jane Eyre",
+            "title": "Charlotte Brontë",
+            "price": 11.49,
+            "category": "Gothic",
+            "image_url":"Jane Eyre.png"
+        },
+        {
+            "id": 8,
+            "name": "The Odyssey",
+            "title": "Homer",
+            "price": 15.99,
+            "category": "Epic",
+            "image_url": "The odyssey.png"
+        },
+        {
+            "id": 9,
+            "name": "Frankenstein",
+            "title": "Mary Shelley",
+            "price": 7.99,
+            "category": "Horror",
+            "image_url": "Frankenstein.png"
+        },
+        {
+            "id": 10,
+            "name": "The Alchemist",
+            "title": "Paulo Coelho",
+            "price": 9.99,
+            "category": "Fiction",
+            "image_url": "The Alchemist.png"
+        },
+        {
+            "id": 11,
+            "name": "Life of Pi",
+            "title": "Yann Martel",
+            "price": 11.99,
+            "category": "Fiction",
+            "image_url": "Life of pi.png"
+        },
+        
+        {
+            "id": 12,
+            "name": "The Kite Runner",
+            "title": "Khaled Hosseini",
+            "price": 13.99,
+            "category": "Fiction",
+            "image_url": "The Kite runner.png"
+        },
+        {
+            "id": 13,
+            "name": "The Book Thief",
+            "title": "Markus Zusak",
+            "price": 10.49,
+            "category": "Fiction",
+            "image_url": "The book thief.png"
+        },
+        {
+            "id": 14,
+            "name": "The Fault in Our Stars",
+            "title": "John Green",
+            "price": 11.49,
+            "category": "Fiction",
+            "image_url": "The fault in our stars.png"
+        },
+        {
+            "id": 15,
+            "name": "The Goldfinch",
+            "title": "Donna Tartt",
+            "price": 15.99,
+            "category": "Fiction",
+            "image_url": "Goldfinch.png"
+        }
+        
+
+]
