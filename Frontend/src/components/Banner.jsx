@@ -11,9 +11,9 @@ function Banner() {
   };
 
   return (  
-      <div className="max-w-screen-xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row my-20">
+      <div className="max-w-screen-xl container mx-auto md:px-10 px-4 flex flex-col md:flex-row my-20 ">
         {/* Left Side */}
-        <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-32">
+        <div className="w-full order-2 md:order-1 md:w-1/2 mt-12 md:mt-32 ">
           <div className="space-y-9">
             <h1 className="text-7xl font-bold">
               Beyond Pages:<br />

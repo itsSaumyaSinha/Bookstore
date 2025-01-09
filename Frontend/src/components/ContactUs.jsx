@@ -31,7 +31,7 @@ const ContactUs = () => {
   return (
     <>
     <Navbar/>
-    <div id="my_modal_6" className=" flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div id="my_modal_6" className=" flex items-center justify-center min-h-screen bg-white dark:bg-gray-900">
       <div className="mt-20 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg p-6 max-w-md w-1/2 relative">
         <h1 className=" mt-3 bg-gray-800 rounded-md py-2 text-3xl font-bold mb-6 text-white dark:text-gray-100 text-center">Contact Us</h1>
         <button

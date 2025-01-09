@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
+
 function Navbar() {
+
+
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const element = document.documentElement;
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     if (theme === "dark") {
@@ -69,7 +72,7 @@ function Navbar() {
                 {navitems}
               </ul>
             </div>
-            <a className="text-3xl font-bold cursor-pointer">BookStore</a>
+            <a className="text-3xl font-bold cursor-pointer">HouseBook</a>
           </div>
           <div className="navbar-end space-x-3">
             <div className="navbar-center hidden lg:flex">

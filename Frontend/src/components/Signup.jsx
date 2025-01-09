@@ -1,7 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import Login from './Login';
+import axios from "axios";
+import toast from 'react-hot-toast';
 
 function Signup() {
     const {
@@ -9,7 +10,31 @@ function Signup() {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+    
+    const onSubmit = async (data) => {
+        const userInfo = {
+            fullname: data.fullname,
+            email: data.email,
+            password: data.password,
+        };
+
+        await axios.post("http://localhost:4001/user/signup", userInfo)
+            .then((res) => {
+                console.log(res.data);
+                if (res.data) {
+                    toast.success('Signed up successfully!');
+                    localStorage.setItem("Users", JSON.stringify(res.data.user));
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+                if (err.response) {
+                    toast.error("Error: " + err.response.data.message);
+                } else {
+                    toast.error("An error occurred during signup");
+                }
+            });
+    };
 
     return (
         <div>
@@ -25,8 +50,8 @@ function Signup() {
                             <div>
                                 <span>Name</span><br />
                                 <input type="text" placeholder="Enter your Full Name" className="w-80 px-2 py-1 border rounded-md outline-none"
-                                    {...register("Name", { required: true })} />
-                                <br />{errors.Name && <span className="text-sm text-red-500">This field is required</span>}
+                                    {...register("fullname", { required: true })} />
+                                <br />{errors.fullname && <span className="text-sm text-red-500">This field is required</span>}
                             </div>
                             {/* Email */}
                             <div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import Signup from './Signup';
+import axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
 
 function Login() {
     const {
@@ -9,13 +11,39 @@ function Login() {
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+
+    const onSubmit = async (data) => {
+        const userInfo = {
+            email: data.email,
+            password: data.password,
+        };
+        try {
+            // Send login request to server
+            const res = await axios.post("http://localhost:4001/user/login", userInfo);
+            
+            // Log the full response for debugging
+            console.log("Full Response:", res);
+            
+            // Check if response data exists
+            if (res?.data) {
+                toast.success('LoggedIn Successfully!');
+                // Save user data to localStorage
+                localStorage.setItem("Users", JSON.stringify(res.data.user));
+            } else {
+                toast.error("Login failed: No response data");
+            }
+        } catch (err) {
+            console.log("Error:", err);
+            // Check if error response data exists and display error message
+            toast.error("Error: " + (err?.response?.data?.message || "Something went wrong"));
+        }
+    };
 
     return (
         <div>
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <form onSubmit={handleSubmit(onSubmit)} method="dialog">
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <Link to="/" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => document.getElementById("my_modal_5").close()}>
                             ✕
                         </Link>
@@ -36,7 +64,7 @@ function Login() {
                         </div>
                         <div>
                             <div className="flex justify-around mt-4">
-                                <button className="btn mt-4 py-3 bg-pink-500 text-white rounded-md hover:bg-pink-700 duration-200">Submit</button>
+                                <button type="submit" className="btn mt-4 py-3 bg-pink-500 text-white rounded-md hover:bg-pink-700 duration-200">Submit</button>
                                 <br />
                                 <div className='mt-4'>
                                     <p>If Not Registered?</p>
@@ -50,6 +78,7 @@ function Login() {
                 </div>
             </dialog>
             <Signup />
+            <Toaster />
         </div>
     );
 }
